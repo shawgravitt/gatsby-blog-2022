@@ -1,5 +1,7 @@
 backend:
-  name: test-repo
+  name: github
+  repo: shawgravitt/gatsby-blog-2022
+  branch: main
 
 media_folder: static/assets
 public_folder: /assets
