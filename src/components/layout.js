@@ -1,0 +1,83 @@
+import React from "react"
+import { Link } from "gatsby"
+import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
+import Navigation from "./navigation"
+import Promotion from "./promotion"
+
+class Layout extends React.Component {
+  render() {
+    const { location, children } = this.props
+    const rootPath = `${__PATH_PREFIX__}/`
+    const blogPath = `${__PATH_PREFIX__}/blog/`
+    let mainHeader
+
+    if (location.pathname === rootPath || location.pathname === blogPath) {
+      mainHeader = (
+        <h1 style={{fontSize: `2rem`}}>
+          Shaw Gravitt
+        </h1>
+      )
+    } else {
+      mainHeader = (
+        <h3 style={{fontSize: `2rem`}}>
+          Shaw Gravitt
+        </h3>
+      )
+    }
+
+    return (
+      <Wrapper className="body">
+        <header className="mainHeader">
+          <StickyWrapper>
+            <Link to="/">
+              <Container>
+                <StaticImage src="../images/avatar.jpg" 
+                  placeholder="TRACED_SVG"
+                  layout="fixed"
+                  width={125}
+                  height={125}
+                  alt="This is me, Shaw Gravitt" 
+                  style={{marginRight: 15, borderRadius: `66% 33% 33%`}} />
+                {mainHeader}
+              </Container>
+            </Link>
+            <Navigation />
+          </StickyWrapper>
+        </header>
+        
+        <Main>{children}</Main>
+
+        <Promotion />
+        
+        <Footer>
+          © {new Date().getFullYear()}, <Link to="/colophon">Colophon</Link>
+        </Footer>
+      </Wrapper>
+    )
+  }
+}
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+`
+const StickyWrapper = styled.div`
+  padding: 35px 10px;
+  position: sticky;
+  top: 25px;
+`
+const Main = styled.main`
+  padding: 35px 10px;
+`
+
+const Container = styled.div`
+  display: flex;
+  align-items: center
+`
+
+const Footer = styled.footer`
+  text-align: center;
+  margin: 24px;
+`
+
+export default Layout
