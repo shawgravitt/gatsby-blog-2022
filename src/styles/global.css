@@ -40,10 +40,13 @@ a:hover {
   color: #8c8c8c;
 }
 
+.sticky-header {
+  padding: 15px 0;
+}
 
 .mainHeader {
   position:relative; 
-  border-bottom: 2px solid #2a334f;
+  border-bottom: 5px solid #973529;
   grid-area: header;
 }
 
@@ -53,16 +56,10 @@ main {
 
 aside {
   grid-area: promo;
+  min-width: 275px;
 }
 
-aside .newsletter-wrapper {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  
-}
+
 
 footer {
   grid-area: footer;
@@ -78,27 +75,91 @@ footer {
     "footer";
   gap: 20px;
 }
+.site-heading {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+nav {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 8px;
+}
 
 @media (min-width: 768px) {
-  .body {
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-areas:
-    "header content promo"
-    "header content promo"
-    "header footer  footer"
-  }
-  
-  .mainHeader {
-    border-right: 5px solid #973529;
-    border-bottom: none;
-    position: sticky;
-    top: 88px;
-  }
-
   main {
     border-top: none;
   }
+  aside .newsletter-wrapper {
+    position: relative;
+  }
+  .sticky-header {
+    padding: 35px 15px 35px 15px;
+  }
+  .site-heading {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+  }
+  nav {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    text-align: right;
+  }
 }
+
+@media (min-width: 900px) {
+  .body {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header content"
+      "header promo"
+      "header footer"
+  }
+  .mainHeader {
+    border-right: 5px solid #973529;
+    border-bottom: none;
+  }
+  .site-heading, nav {
+    display: block;
+    width: 100%;
+  }
+  nav {
+    text-align: center;
+  }
+  nav ul li {
+    display: block;
+    padding: 8px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .body {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+      "header content promo"
+      "header content promo"
+      "header footer  footer"
+  }
+  aside > div{
+    height: 100vh;
+  }
+  aside .newsletter-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 
 .article-wrapper {
   position: relative;

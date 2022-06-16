@@ -19,7 +19,7 @@ class Index extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <ol style={{listStyle: 'none', padding: 0}}>
+        <ol style={{listStyle: 'none', padding: 0, marginLeft: 0}}>
         {posts.map(post => {
           const title = post.node.frontmatter.title
           const image = getImage(post.node.frontmatter.featuredImage)
@@ -55,7 +55,7 @@ class Index extends React.Component {
                 </header>
                 <section>
                   
-                  <GatsbyImage image={image} alt={title} />
+                  <GatsbyImage image={image} alt={title} style={{width: `100%`}}/>
 
                   <div className="article-wrapper" style={{marginTop: 35, marginBottom: 35, overflow: `hidden`, maxHeight: 450}} itemProp="description">
                     <MDXRenderer>{post.node.body}</MDXRenderer>
@@ -115,7 +115,6 @@ export const pageQuery = graphql`
             featuredImage {
               childImageSharp {
                 gatsbyImageData(
-                  width: 600
                   placeholder: TRACED_SVG
                   formats: [AUTO, WEBP, AVIF]
                 )

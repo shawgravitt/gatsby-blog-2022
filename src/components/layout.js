@@ -15,13 +15,13 @@ class Layout extends React.Component {
     if (location.pathname === rootPath || location.pathname === blogPath) {
       mainHeader = (
         <h1 style={{fontSize: `2rem`}}>
-          Shaw Gravitt
+          Shaw's Blog
         </h1>
       )
     } else {
       mainHeader = (
         <h3 style={{fontSize: `2rem`}}>
-          Shaw Gravitt
+          Shaw's Blog
         </h3>
       )
     }
@@ -29,19 +29,21 @@ class Layout extends React.Component {
     return (
       <Wrapper className="body">
         <header className="mainHeader">
-          <StickyWrapper>
-            <Link to="/">
-              <Container>
-                <StaticImage src="../images/avatar.jpg" 
-                  placeholder="TRACED_SVG"
-                  layout="fixed"
-                  width={125}
-                  height={125}
-                  alt="This is me, Shaw Gravitt" 
-                  style={{marginRight: 15, borderRadius: `66% 33% 33%`}} />
-                {mainHeader}
-              </Container>
-            </Link>
+          <StickyWrapper className="sticky-header">
+            <div className="site-heading">
+              <Link to="/">
+                <Container>
+                  <StaticImage src="../images/avatar.jpg" 
+                    placeholder="TRACED_SVG"
+                    layout="constrained"
+                    width={125}
+                    height={125}
+                    alt="This is me, Shaw Gravitt" 
+                    style={{marginRight: 15, borderRadius: `66% 33% 33%`}} />
+                  {mainHeader}
+                </Container>
+              </Link>
+            </div>
             <Navigation />
           </StickyWrapper>
         </header>
@@ -62,7 +64,6 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `
 const StickyWrapper = styled.div`
-  padding: 35px 10px;
   position: sticky;
   top: 25px;
 `
@@ -71,8 +72,7 @@ const Main = styled.main`
 `
 
 const Container = styled.div`
-  display: flex;
-  align-items: center
+  text-align: center;
 `
 
 const Footer = styled.footer`
