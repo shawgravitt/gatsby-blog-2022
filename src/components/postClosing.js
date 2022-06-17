@@ -3,7 +3,7 @@ import Bio from "./bio";
 import Newsletter from "./newsletter";
 
 
-function PostClosing() {
+const PostClosing = () => {
   return(
     <div>
       <p>
