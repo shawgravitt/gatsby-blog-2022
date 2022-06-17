@@ -9,10 +9,9 @@ class Layout extends React.Component {
   render() {
     const { location, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    const blogPath = `${__PATH_PREFIX__}/blog/`
     let mainHeader
 
-    if (location.pathname === rootPath || location.pathname === blogPath) {
+    if (location.pathname === rootPath) {
       mainHeader = (
         <h1 style={{fontSize: `2rem`}}>
           Shaw's Blog
@@ -50,7 +49,7 @@ class Layout extends React.Component {
         
         <Main>{children}</Main>
 
-        <Promotion />
+        <Promotion  location={location} />
         
         <Footer>
           © {new Date().getFullYear()}, <Link to="/colophon">Colophon</Link>

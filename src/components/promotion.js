@@ -1,14 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import Newsletter from "./newsletter";
-import { globalHistory } from "@reach/router"
 
-
-
-
-
-const Promotion = () => {
-  const path = globalHistory.location.pathname;
+const Promotion = ({ location }) => {
+  const path = location.pathname;
   const allowPaths = ["/", "/contact", "/about", "/portfolio"];
   const isAllowed = allowPaths.includes(path)
 
@@ -18,7 +13,6 @@ const Promotion = () => {
       <Newsletter />
     )
   } 
-
 
   return(
     <aside>
