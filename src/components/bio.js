@@ -38,7 +38,7 @@ const Bio = () => {
               }}
             />
             <p>
-              Written by <strong>{author}</strong>. Follow me on <a href={`https://twitter.com/${social.twitter}`}>Twitter</a> and<a href={`https://twitter.com/${social.instagram}`}>Instagram.</a>
+              Written by <strong>{author}</strong>. Follow me on <a href={`https://twitter.com/${social.twitter}`}>Twitter</a> and <a href={`https://twitter.com/${social.instagram}`}>Instagram.</a>
               
             </p>
           </Container>
