@@ -38,7 +38,7 @@ class Layout extends React.Component {
                     width={125}
                     height={125}
                     alt="This is me, Shaw Gravitt" 
-                    style={{marginRight: 15, borderRadius: `66% 33% 33%`}} />
+                    style={{borderRadius: `66% 33% 33%`}} />
                   {mainHeader}
                 </Container>
               </Link>
@@ -76,7 +76,7 @@ const Container = styled.div`
 
 const Footer = styled.footer`
   text-align: center;
-  margin: 24px;
+  margin: 25px;
 `
 
 export default Layout

@@ -15,7 +15,7 @@ class Colophon extends React.Component {
         <h1>About this site</h1>
         <ul>
           <li>No tracking, your privacy is valuable.</li>
-          <li>built with Gatsbyjs, a react static site genrator.</li>
+          <li>Built with Gatsbyjs, a react static site genrator.</li>
           <li>Use Typography.js. The header font is Varela Round and the body font is Lora. Typography is important but I struggle knowing what looks good.</li>
         </ul>
       </Layout>

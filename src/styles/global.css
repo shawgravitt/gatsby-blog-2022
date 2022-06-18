@@ -105,13 +105,22 @@ nav ul li {
   .site-heading {
     display: inline-block;
     vertical-align: middle;
-    width: auto;
+    width: 49%;
   }
   nav {
     display: inline-block;
     vertical-align: middle;
     width: 50%;
     text-align: right;
+  }
+  nav ul {
+    margin: 0;
+  }
+  .site-heading .gatsby-image-wrapper {
+    margin-right: 15px;
+  }
+  .site-heading h1, .site-heading h3 {
+    display: inline-block;
   }
 }
 
@@ -133,6 +142,10 @@ nav ul li {
   }
   nav {
     text-align: center;
+    
+  }
+  nav ul {
+    margin: 35px 0 0 0;
   }
   nav ul li {
     display: block;

@@ -20,7 +20,7 @@ const links = [
 const Navigation = () => {
   return(
     <nav>
-      <ul style={{listStyle: `none`, margin: `35px 0 0 0`}}>
+      <ul style={{listStyle: `none`}}>
         {links.map(link => (
           <li key={link.url} style={{marginBottom: 0}}>
             <Link to={link.url}>{link.text}</Link>
